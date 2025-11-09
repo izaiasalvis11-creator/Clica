@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Preta Rara 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(180deg, #000000, #3b0000, #990000);
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      text-align: center;
+    }
+
+    /* Corações flutuando */
+    .heart {
+      position: fixed;
+      bottom: -10px;
+      font-size: 20px;
+      color: red;
+      animation: floatUp 6s infinite ease-in;
+      opacity: 0.7;
+    }
+    @keyframes floatUp {
+      0% {transform: translateY(0) scale(1); opacity: 0.7;}
+      100% {transform: translateY(-100vh) scale(1.8); opacity: 0;}
+    }
+
+    /* Efeito de entrada */
+    #loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: red;
+      font-size: 1.5rem;
+      z-index: 9999;
+    }
+    #loading.hidden {opacity: 0; pointer-events: none; transition: opacity 1s ease;}
+
+    /* Conteúdo */
+    .content {
+      padding: 60px 20px;
+      animation: fadeIn 2s ease;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* Texto principal */
+    h1 {
+      font-size: 2.5em;
+      color: #ff4d4d;
+      margin-top: 20px;
+      animation: fadeIn 3s ease-in-out;
+    }
+    p {
+      font-size: 1.2em;
+      max-width: 700px;
+      margin: 20px auto;
+      animation: fadeIn 2s ease-in-out;
+      line-height: 1.6em;
+    }
+
+    /* Imagens com transição suave e desfoque */
+    img {
+      max-width: 90%;
+      border-radius: 20px;
+      margin: 20px 0;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+      opacity: 0;
+      filter: blur(10px);
+      transform: scale(1.05);
+      animation: fadeImage 2s forwards ease-in-out;
+    }
+
+    @keyframes fadeImage {
+      to {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1);
+      }
+    }
+
+    img:hover {
+      transform: scale(1.05);
+      transition: transform 0.5s ease;
+    }
+
+    /* Te amo final */
+    .teamo {
+      font-size: 3em;
+      color: #ff4d4d;
+      margin-top: 40px;
+      animation: heartbeat 2s infinite;
+    }
+    @keyframes heartbeat {
+      0%, 100% {transform: scale(1);}
+      50% {transform: scale(1.2);}
+    }
+
+    /* Frase final com fade e brilho */
+    .final {
+      font-size: 1.5em;
+      color: #ff8080;
+      margin-top: 30px;
+      opacity: 0;
+      animation: fadeInFinal 5s ease-in forwards, glow 3s infinite alternate;
+      animation-delay: 2s;
+    }
+    @keyframes fadeInFinal {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes glow {
+      from {text-shadow: 0 0 10px #ff4d4d;}
+      to {text-shadow: 0 0 25px #ffb3b3;}
+    }
+
+    /* Rolagem suave */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Botão de voltar ao topo */
+    #backToTop {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #ff1a1a;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      font-size: 1.8em;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+      animation: pulse 2s infinite, heartbeat 2s infinite;
+      transition: transform 0.3s ease;
+      z-index: 999;
+    }
+
+    #backToTop:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 25px rgba(255, 77, 77, 0.9);
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 10px rgba(255, 77, 77, 0.5); }
+      50% { box-shadow: 0 0 25px rgba(255, 77, 77, 1); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Tela de carregamento -->
+  <div id="loading">
+    <p>💖 Carregando amor... 💖</p>
+  </div>
+
+  <!-- Efeitos de coração -->
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (3 + Math.random() * 3) + 's';
+      heart.innerHTML = '❤️';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart, 500);
+  </script>
+
+  <!-- Conteúdo principal -->
+  <div class="content">
+    <h1>Minha Preta Rara 💋</h1>
+    <p>Você é o verso mais bonito que o amor já escreveu em mim.</p>
+    <img src="IMG_1077.jpg" alt="Foto 1">
+    <p>Desde que te encontrei, tudo ganhou cor, ritmo e razão.  
+       Meu coração dança no compasso do teu sorriso.</p>
+    <img src="IMG_1083.jpg" alt="Foto 2">
+    <p>Te amar é viver num sonho que nunca quero acordar.  
+       É sentir o tempo parar toda vez que te vejo.</p>
+
+    <img src="IMG_1067.jpg" alt="Foto 3">
+    <p>Em cada olhar seu, encontro um universo inteiro de paz e carinho.  
+       Sua presença acalma o que o mundo agita dentro de mim.</p>
+
+    <img src="IMG_1488.jpg" alt="Foto 4">
+    <p>Seu amor é como o pôr do sol mais bonito — quente, suave e eterno.  
+       É nele que encontro o brilho que ilumina minha alma.</p>
+
+    <div class="teamo">Te Amo ❤️</div>
+    <div class="final">Pra sempre nós dois 💍</div>
+  </div>
+
+  <!-- Player YouTube -->
+  <div style="margin-top: 40px;">
+    <iframe width="360" height="200" src="https://www.youtube.com/embed/sQQsR3rTj2k?autoplay=1&loop=1" 
+      title="MC Cabelinho - Minha Preta Rara" 
+      frameborder="0" 
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- Áudio de vento ambiente -->
+  <audio id="wind" loop autoplay>
+    <source src="https://cdn.pixabay.com/download/audio/2023/03/10/audio_blowing-wind-outside-141989.mp3?filename=wind-outside-sound-ambient-141989.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Botão de voltar ao início -->
+  <button id="backToTop" title="Voltar ao início">❤️</button>
+
+  <script>
+    window.addEventListener("load", () => {
+      setTimeout(() => document.getElementById("loading").classList.add("hidden"), 3000);
+    });
+
+    const windAudio = document.getElementById("wind");
+    windAudio.volume = 0.05;
+
+    const btn = document.getElementById("backToTop");
+    btn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+
+</body>
+</html>
