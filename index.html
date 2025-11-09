@@ -221,22 +221,5 @@
     <source src="https://cdn.pixabay.com/download/audio/2023/03/10/audio_blowing-wind-outside-141989.mp3?filename=wind-outside-sound-ambient-141989.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- Botão de voltar ao início -->
-  <button id="backToTop" title="Voltar ao início">❤️</button>
-
-  <script>
-    window.addEventListener("load", () => {
-      setTimeout(() => document.getElementById("loading").classList.add("hidden"), 3000);
-    });
-
-    const windAudio = document.getElementById("wind");
-    windAudio.volume = 0.05;
-
-    const btn = document.getElementById("backToTop");
-    btn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  </script>
-
 </body>
 </html>
